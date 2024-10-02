@@ -1,1 +1,2 @@
-An Application that oversees the activities of a store
+# Baggy-Superstores
+An e-commerce application that helps deal with e-commerce related activities
