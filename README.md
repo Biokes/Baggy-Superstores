@@ -1,0 +1,1 @@
+An Application that oversees the activities of a store
