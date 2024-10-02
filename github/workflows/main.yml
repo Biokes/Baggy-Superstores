@@ -52,3 +52,18 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+      - name: Deploy to Vercel
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{
+              "name": "Baggy stores",
+              "gitSource": {
+                "type": "github",
+                "ref": "${{ github.ref }}",
+                "repo": "${{ github.repository }}"
+              },
+              "target": "production"
+            }' \
+            https://api.vercel.com/v1/deployments

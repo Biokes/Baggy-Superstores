@@ -1,0 +1,11 @@
+@keyframes __slideInLeft {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+.slideIn{
+    animation: __slideInLeft .3s;
+}
