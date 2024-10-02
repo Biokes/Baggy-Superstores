@@ -1,1 +1,0 @@
-A Chain store that oversees the sales of 
