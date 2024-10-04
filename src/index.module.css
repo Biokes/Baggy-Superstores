@@ -6,6 +6,40 @@
         transform: translateX(0);
     }
 }
-.slideIn{
-    animation: __slideInLeft .3s;
+.mainContainer{
+    animation: __slideInLeft .5s;
+    background: #e8eefa;
+    height: 100vh;
+}
+.sectionsContainer{
+    padding-inline :30px;
+    padding-block: 5px;
+}
+.sectionsContainer>p{
+    padding-left: 12px;
+    color: #6B7280;
+    font-weight: bolder;
+    font-size: 13px;
+}
+.sectionsContainer :first-child{
+    border-radius: 7px;
+    border: 2px solid #0a0a0a;
+    width: 250px;
+    height: 45px;
+    padding-left: 10px;
+}
+.sections{
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+.hamburgerSlider{
+    background-color: #fbfbfb;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    inset: 0px;
+    background-color: #b8b8b8;
 }
