@@ -1,6 +1,6 @@
 'use client';
 import styles from '../../index.module.css'
-import HomeComponent from '../../components/homePage'
+import HomeComponent from '@/components/homePage/home'
 export default function Home(){
     
     return (

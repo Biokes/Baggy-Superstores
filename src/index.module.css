@@ -39,7 +39,6 @@
     flex-direction: column;
 }
 .hamburgerSlider{
-    backdrop-filter: blur(10px);
     padding-left: 20px;
     padding-top:20px;
     z-index: 1001;
@@ -54,7 +53,7 @@
     background-color: rgba(220, 220, 220, 0.5);
 }
 
-.hamburgerSlider.slideOut {
+.hamburgerSliderSlideOut {
     animation: slideOutLeft 0.4s forwards;
 }
 

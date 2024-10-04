@@ -1,16 +1,16 @@
 'use client';
-import styles from '../index.module.css'
+import styles from '../../index.module.css'
 import { useSelector } from 'react-redux';
 import {UserState} from "@/redux/userSlice";
 import {Icon} from '@iconify/react'
 import { useState } from 'react'
 import Hamburger from 'hamburger-react';
 import {useRouter } from 'next/navigation'
-import Slider from '../components/slider'
+import Slider from '../slider'
 import {SliderProps} from "@/components/slider";
 
 
-export default function     HomeComponent({props}:SliderProps){
+export default function  HomeComponent({props}:SliderProps){
 
     const Navbar =()=>{
         const list = [
