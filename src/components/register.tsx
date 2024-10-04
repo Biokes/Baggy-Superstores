@@ -12,12 +12,12 @@ import { useDispatch } from 'react-redux';
 import {setUser } from '@/redux/userSlice';
 
 
-interface FormValues {
+export interface FormValues {
     email: string,
     password: string,
     confirmPassword: string,
 }
-interface ApiResponse {
+export interface ApiResponse {
     success: boolean,
     data:string | {
         id:number,
@@ -90,7 +90,8 @@ export default function RegisterComponent (){
                     router.push('/home')
                 }
                 else {
-                    const errorMessage = typeof data.data === 'string' ? data.data : 'An unknown error occurred';
+                    const errorMessage = typeof data.data === 'string' ? data.data
+                        : 'An unknown error occurred';
                     throw new Error(errorMessage);
                 }
 
@@ -121,6 +122,7 @@ export default function RegisterComponent (){
                 setLoading(false);
             }
         }
+
         const RegisterForm =()=> {
             return (
                 <div className={``}>
@@ -179,8 +181,8 @@ export default function RegisterComponent (){
         return (
             <div className={'justify-center items-center flex flex-col ' +
                 'md:border-2px md:border-[1px] md:border-black md:py-[20px] md:px-[10px] md:rounded-md'}>
-                <p className={'font-semibold text-lg text-gray-600'}>Baggy Stores</p>
-                <p className={'font-semibold text-lg text-gray-500 pb-[20px]'}>Register</p>
+                <p className={'font-semibold text-lg text-gray-600 md:text-2xl'}>Baggy Stores</p>
+                <p className={'font-semibold text-lg text-gray-500 pb-[20px] md:text-2xl md:pt-[20px]'}>Register</p>
                 <RegisterForm/>
                 <ToastContainer/>
             </div>
