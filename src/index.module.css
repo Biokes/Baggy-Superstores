@@ -54,7 +54,7 @@
 }
 
 .hamburgerSliderSlideOut {
-    animation: slideOutLeft 0.4s forwards;
+    animation: slideOutLeft 0.4s backwards;
 }
 
 @keyframes slideOutLeft {
@@ -82,4 +82,34 @@
     .sections{
         padding-block: 20px;
     }
+}
+.imageDiv{
+    @apply w-[250px] overflow-hidden h-[120px]
+}
+.collectionDiv{
+    @apply justify-center items-center flex flex-col bg-gray-100 py-4 px-2
+}
+.collectionText{
+    @apply font-bold text-lg text-gray-700 text-center px-4
+}
+.collectionButton {
+    @apply px-3 py-2 bg-green-300 hover:bg-green-500 text-sm rounded-md font-bold cursor-pointer
+}
+.text{
+    @apply text-sm text-center px-3 py-2
+}
+.backPack{
+    @apply justify-center items-center flex flex-col gap-3 py-3
+}
+.bagImages{
+    @apply  px-[40px] h-[250px]  justify-center items-center flex
+}
+.bagImages :nth-child(1){
+    @apply hover:scale-105 transform overflow-hidden
+}
+.storename{
+    @apply text-center text-2xl font-semibold text-gray-700 py-[10px] 
+}
+.storeText{
+    @apply text-center font-thin text-gray-500
 }

@@ -8,7 +8,8 @@ import Hamburger from 'hamburger-react';
 import {useRouter } from 'next/navigation'
 import Slider from '../slider'
 import {SliderProps} from "@/components/slider";
-
+import HeroSection from './heroSection'
+import BagCollection from '../../components/homePage/bagCollection'
 
 export default function  HomeComponent({props}:SliderProps){
 
@@ -24,7 +25,7 @@ export default function  HomeComponent({props}:SliderProps){
         const user = useSelector((state:UserState) => state);
         console.log('user details',user);
         return (
-            <div className={'flex justify-between bg-gray-200 px-[20px] relative py-[10px]'}>
+            <div className={'flex justify-between bg-gray-300 px-[-20px] relative py-[10px]'}>
                 {isOpen && (
                     <Slider props={props}/>
                 )}
@@ -64,6 +65,8 @@ export default function  HomeComponent({props}:SliderProps){
     return (
         <div className={`${styles.slideIn}`}>
             <Navbar/>
+            <HeroSection/>
+            <BagCollection/>
         </div>
     )
 }
