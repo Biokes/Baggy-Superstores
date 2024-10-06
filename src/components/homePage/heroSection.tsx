@@ -22,14 +22,16 @@ export default function HeroSection(){
                     showFirst?
                         <Image src={Bag1}
                         className={`${showFirst?styles.slideIn: styles.hamburgerSliderSlideOut} 
-                        transform scale-250 translate-x-[-50px] w-[full] h-[100%]`} alt=""/> :
+                        transform hover:scale-250 translate-x-[-50px] w-[full] h-[100%]`} alt=""/> :
                         <Image src={Bag2}
                         className={`${showFirst?styles.slideIn: styles.hamburgerSliderSlideOut} 
                         w-[100%] h-[100%] transform scale-250 translate-x-[-50px]`} alt=""/>
                 }
             </div>
-            <p className={styles.text}>The highest quality products, sewn in Ireland from Irish materials.
-                Quality and durability for years.</p>
+            <p className={styles.text}>
+                The highest quality products, sewn in Ireland from Irish materials.
+                Quality and durability for years.
+            </p>
             <button className={styles.collectionButton}>New Collection</button>
         </div>
     )

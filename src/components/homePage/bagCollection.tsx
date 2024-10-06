@@ -7,7 +7,7 @@ import bag4 from '../../assets/BAGS025-lu101ol1.webp'
 import bag5 from '../../assets/BAGS014-lu101n4m.webp'
 import small2 from '../../assets/BAGS012-lu101osh.webp'
 import Image from 'next/image'
-import {BagDetails} from '../../interfaces/interfaces'
+import {BagDetails} from '@/interfaces/interfaces'
 import styles from '../../index.module.css'
 
 export default function BagCollection(){

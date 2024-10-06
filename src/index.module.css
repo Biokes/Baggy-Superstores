@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 @keyframes __slideInLeft {
     from{
         transform: translateX(-100%);
@@ -83,21 +87,31 @@
         padding-block: 20px;
     }
 }
-.imageDiv{
-    @apply w-[250px] overflow-hidden h-[120px]
-}
+
 .collectionDiv{
     @apply justify-center items-center flex flex-col bg-gray-100 py-4 px-2
+    sm:grid sm:grid-rows-3 sm:grid-cols-2 sm:text-2xl sm:grid-rows-[50px_80px_110px] sm:pl-[40px]
 }
 .collectionText{
-    @apply font-bold text-lg text-gray-700 text-center px-4
+    @apply font-bold text-lg text-gray-700 text-center
+    sm:text-2xl sm:order-1 sm:col-span-2 sm:text-start sm:text-3xl
 }
-.collectionButton {
-    @apply px-3 py-2 bg-green-300 hover:bg-green-500 text-sm rounded-md font-bold cursor-pointer
+.imageDiv{
+    @apply w-[250px] overflow-hidden h-[120px] order-2
+    sm:order-4 sm:col-span-1 sm:w-[350px] sm:h-[180px]
 }
 .text{
-    @apply text-sm text-center px-3 py-2
+    @apply text-center text-gray-500 px-3 py-2  text-lg font-thin 
+    sm:order-2 sm:col-span-2 sm:text-start sm:text-2xl sm:text-xl sm:px-0
 }
+.collectionButton {
+    @apply px-3 py-2 w-[180px] bg-green-300 hover:bg-green-500 text-sm rounded-md font-bold cursor-pointer
+    sm:order-3 sm:col-span-1 sm:text-lg sm:mt-[-30px]
+}
+
+
+
+
 .backPack{
     @apply justify-center items-center flex flex-col gap-3 py-3
 }
