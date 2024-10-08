@@ -25,3 +25,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.__zoom-enter{
+  transition: transform 0.3s ease-out;
+}
+.__zoom-enter:hover{
+  transform: scale(1.05);
+}

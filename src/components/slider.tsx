@@ -2,9 +2,8 @@
 import styles from '../index.module.css';
 import {useRouter} from "next/navigation";
 import {useState} from "react";
-export interface SliderProps{
-    props:number
-}
+import {SliderProps} from '@/interfaces/interfaces'
+
 export default function Slider({props}: SliderProps){
     const [stylesState, setStyleState] = useState<string>(`${styles.hamburgerSlider}`)
     const list = [

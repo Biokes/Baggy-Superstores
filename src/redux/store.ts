@@ -1,9 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import userReducer from './userSlice'
-
+import bagReducer from './bagSlice'
 export const store = configureStore({
     reducer: {
-        user: userReducer
+        user: userReducer,
+        bag: bagReducer
     }
 });
 export type AppDispatch = typeof store.dispatch;

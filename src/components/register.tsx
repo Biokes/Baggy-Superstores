@@ -10,21 +10,9 @@ import {Icon} from "@iconify/react";
 import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch } from 'react-redux';
 import {setUser } from '@/redux/userSlice';
+import {FormValues, ApiResponse} from '@/interfaces/interfaces';
 
 
-export interface FormValues {
-    email: string,
-    password: string,
-    confirmPassword: string,
-}
-export interface ApiResponse {
-    success: boolean,
-    data:string | {
-        id:number,
-        email:string
-    },
-    timeStamp:Date
-}
 export default function RegisterComponent (){
     const router = useRouter();
     const dispatch = useDispatch();

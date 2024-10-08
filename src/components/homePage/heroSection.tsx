@@ -7,12 +7,18 @@ import Image from 'next/image'
 import styles from '../../index.module.css'
 
 export default function HeroSection(){
-    const [showFirst, setShowFirst] = useState<boolean>(false)
-    useEffect(()=>{
+    const [showFirst, setShowFirst] = useState<boolean>(false);
+    const [isTransitioning, setIsTransitioning] = useState<boolean>(false); 
+
+  useEffect(() => {
     const timer = setInterval(() => {
-        setShowFirst((showFirst) => !showFirst);
-    }, 4500);
-    return () => clearTimeout(timer);
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setShowFirst((prev) => !prev);
+        setIsTransitioning(false);
+      }, 1000);
+    }, 4000);
+    return () => clearInterval(timer);
 }, []);
     return (
         <div className={styles.collectionDiv}>
@@ -21,11 +27,13 @@ export default function HeroSection(){
                 {
                     showFirst?
                         <Image src={Bag1}
-                        className={`${showFirst?styles.slideIn: styles.hamburgerSliderSlideOut} 
-                        transform hover:scale-250 translate-x-[-50px] w-[full] h-[100%]`} alt=""/> :
+                        className={`${showFirst && !isTransitioning ? styles.fadeIn : styles.fadeOut}
+                        transform hover:scale-250 translate-x-[-50px] w-[100%] h-[100%] 
+                        md:translate-x-[-70px] overflow-hidden lg:scale-110 lg:translate-x-[-40%]`} alt=""/> :
                         <Image src={Bag2}
-                        className={`${showFirst?styles.slideIn: styles.hamburgerSliderSlideOut} 
-                        w-[100%] h-[100%] transform scale-250 translate-x-[-50px]`} alt=""/>
+                        className={`${!showFirst && !isTransitioning ? styles.fadeIn : styles.fadeOut} 
+                        w-[100%] h-[100%] transform scale-250 translate-x-[-50px] 
+                        md:translate-x-[-30%] overflow-hidden  lg:scale-110`} alt=""/>
                 }
             </div>
             <p className={styles.text}>
