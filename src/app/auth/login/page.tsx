@@ -6,6 +6,7 @@ import {toast} from "react-toastify";
 import {useRouter} from "next/navigation";
 import styles from "@/styles/index.module.css";
 import {Icon} from "@iconify/react";
+import Link from 'next/link'
 
 interface LoginForm {
     email:string,
@@ -79,10 +80,8 @@ export default function Page(){
                     }}
                           className={`flex flex-col ${styles.sections} gap-2`}>
                         <section className={`${styles.sectionsContainer}`}>
-                            <Field errors={errors.email} name="email" type={'text'} values={values.email}
-                                   placeholder={'email'}
-                                   style={{borderColor: errors.email && touched.email ? 'red' : 'inherit'}}
-                            />
+                            <Field errors={errors.email} name="email" type={'text'} values={values.email} placeholder={'email'}
+                                   style={{borderColor: errors.email && touched.email ? 'red' : 'inherit'}}/>
                             {errors.email && (<p className={"text-xs font-thin text-[#FF4040FF]"}>{errors.email}</p>)}
                         </section>
                         <section className={`${styles.sectionsContainer}`}>
@@ -106,14 +105,8 @@ export default function Page(){
                                       className={'py-[10px]'}/>
                             }
                         </div>
-                        <p className={'hover:underline hover:text-gray-600 text-gray-400 pt-[20px]'}
-                           onClick={() => {
-                               router.push('/auth/register')
-                           }}>Register </p>
-                        <p className={'hover:underline hover:text-gray-600 text-gray-400 pt-[5px]'}
-                           onClick={() => {
-                               router.push('/auth/otp')
-                           }}>Forgotten Password</p>
+                        <Link className={'hover:underline hover:text-gray-600 text-gray-400 pt-[20px]'} href={'/auth/register'}>Register </Link>
+                        <Link className={'hover:underline hover:text-gray-600 text-gray-400 pt-[5px]'} href={'/auth/otp'}>Forgotten Password</Link>
                     </Form>
                 )}
             </Formik>

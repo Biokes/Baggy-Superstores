@@ -13,15 +13,10 @@ import bag9 from '../../assets/BAGS012-lu101osh (1).webp';
 import bag10 from '../../assets/BAGS015-lu101mjc (1).webp';
 import {BagDetails} from '@/interfaces/interfaces';
 import styles from '../../styles/index.module.css';
-import { useDispatch} from 'react-redux';
-import {RouterData} from '@/interfaces/interfaces';
-import {setBag} from "@/redux/bagSlice";
+import { setBag } from '@/redux/bagSlice';
 import Link from 'next/link'
 import Image from 'next/image'
-function Route(data:RouterData){
-    const Dispatch = useDispatch()
-    Dispatch(setBag(data.bagDetails));
-}
+import { useDispatch } from 'react-redux';
 
 export default function BagCollection(){
     const bagsPack: BagDetails[] = [
@@ -38,12 +33,18 @@ export default function BagCollection(){
         {image:bag9, store:'Baggy bags', price:'$60'},
         {image:bag10, store:'Baggy bags', price:'$25'}
     ]
+
+    const dispatch  = useDispatch();
+    const handleClick=(bag:BagDetails)=>{
+        dispatch(setBag(bag))
+
+    }
+
     return (
         <div className={`${styles.backPack}`}>
             {
                 bagsPack.map((bag,index)=>(
-                    <Link key={index} className={`sm:order-${index+1}`}
-                         onClick={()=>{Route({url:'/backpack',bagDetails:bag})}} href={'/backpack'}>
+                    <Link key={index} className={`sm:order-${index+1}`} onClick={()=>{handleClick(bag)}} href={'/backpack'}>
                         <div className={`__zoom-enter ${styles.bagImages}`} >
                             <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt=''/>
                         </div>
