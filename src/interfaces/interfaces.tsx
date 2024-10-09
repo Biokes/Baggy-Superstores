@@ -22,10 +22,6 @@ export interface ApiResponse {
     },
     timeStamp:Date
 }
-export interface TouchComponentProps{
-    props:number,
-    collection: BagDetails[]
-}
 export interface RouterData{
     url: string,
     bagDetails: BagDetails

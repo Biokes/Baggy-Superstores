@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react/dist/iconify.js'
 import Image from 'next/image'
 export default function HomeFooter(){
     const [isClicked, setClicked] = useState<boolean>(false);
-    <Icon icon="iconamoon:arrow-left-2-duotone" width="1.2rem" height="1.2rem" className="color: black"></Icon>
+    <Icon icon="iconamoon:arrow-left-2-duotone" width="1.2rem" height="1.2rem" style={{color: 'black'}}/>
     const handleClick = ()=>{
         setClicked(!isClicked);
     }

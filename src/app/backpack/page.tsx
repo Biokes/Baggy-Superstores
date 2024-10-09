@@ -78,7 +78,7 @@ export default function BagPack(){
     )
     }
     return (
-        <div className={'flex flex-col'}>
+        <div>
             <Component/>
         </div>
     )
