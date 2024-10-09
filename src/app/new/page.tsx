@@ -33,7 +33,7 @@ export default function New(){
     return (
         <div>
             <Navbar props={1}/>
-            <p className={styles.new}>News</p>
+            <p className={styles.headerText}>News</p>
             <div className={`${styles.backPack}`}>
                 {
                     bagsPack.map((bag, index) => (

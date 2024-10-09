@@ -30,3 +30,7 @@ export interface RouterData{
     url: string,
     bagDetails: BagDetails
 }
+export interface CartItem{
+    quantity:number,
+    bag:BagDetails
+}

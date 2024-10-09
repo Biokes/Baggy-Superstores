@@ -42,7 +42,7 @@ export default function HeroSection(){
                 The highest quality products, sewn in Ireland from Irish materials.
                 Quality and durability for years.
             </p>
-            <Link className={styles.collectionButton} href={'/backpack'}>
+            <Link className={styles.collectionButton} href={'/new'}>
                 New Collection
             </Link>
         </div>

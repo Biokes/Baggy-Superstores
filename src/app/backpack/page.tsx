@@ -8,6 +8,7 @@ import bag1 from '../../assets/BAGS11-lu101ode.webp';
 import bag2 from '../../assets/BAGS022-lu101neq.webp';
 import { useSelector } from "react-redux";
 import {useState} from 'react';
+import Navbar from '@/components/homePage/navbar';
 
 export default function BagPack(){
     const [isShowingCart , setShowCart] = useState<boolean>(false)
@@ -44,6 +45,7 @@ export default function BagPack(){
     console.log(data.store,' : ',data.price);
     return(
         <div>
+            <Navbar props={0}/>
             <div>
                 <div className={styles.BagInfoImage}>
                     <Image src={data.image} alt='loading'/>
@@ -51,8 +53,8 @@ export default function BagPack(){
                 <p>{data.store}</p>
                 <p>{data.price}</p>
                 <p className={`px-[8px]`}>{productdescription}</p>
-                <div className={styles.buttonInfoButton} onClick={()=>{setShowCart(true)}}>
-                    {isShowingCart? 'Add to cart' : 'Added to cart'}    
+                <div className={styles.collectionButton} onClick={()=>{setShowCart(!isShowingCart)}}>
+                    {!isShowingCart? 'Add to cart' : 'Remove from cart'}    
                 </div>
             </div>
            

@@ -16,6 +16,7 @@ import styles from '../../styles/index.module.css';
 import { useDispatch} from 'react-redux';
 import {RouterData} from '@/interfaces/interfaces';
 import {setBag} from "@/redux/bagSlice";
+import Link from 'next/link'
 import Image from 'next/image'
 function Route(data:RouterData){
     const Dispatch = useDispatch()
@@ -41,14 +42,14 @@ export default function BagCollection(){
         <div className={`${styles.backPack}`}>
             {
                 bagsPack.map((bag,index)=>(
-                    <div key={index} className={`sm:order-${index+1}`}
-                         onClick={()=>{Route({url:'/backpack',bagDetails:bag})}}>
+                    <Link key={index} className={`sm:order-${index+1}`}
+                         onClick={()=>{Route({url:'/backpack',bagDetails:bag})}} href={'/backpack'}>
                         <div className={`__zoom-enter ${styles.bagImages}`} >
                             <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt=''/>
                         </div>
                         <p className={styles.storename}>{bag.store}</p>
                         <p className={styles.storeText}>{bag.price}</p>
-                    </div>
+                    </Link>
                 ))
             }
         </div>

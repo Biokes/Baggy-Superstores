@@ -1,10 +1,10 @@
-import RegisterComponent from '../components/auth/register';
-import styles from '../styles/index.module.css'
+'use client'
+import Home from'@/app/home/page'
 import React from "react";
 export default function Page(){
     return(
-        <div className={`${styles.mainContainer} flex flex-col justify-center items-center `}>
-                <RegisterComponent/>
+        <div>
+                <Home/>
         </div>
     )
 }

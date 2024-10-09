@@ -140,7 +140,7 @@
     lg:text-[17px] lg:w-[350px]
 }
 .collectionButton {
-    @apply px-3 py-2 w-[180px] bg-green-300 hover:bg-green-500 text-sm rounded-md font-bold cursor-pointer
+    @apply px-3 py-2 w-[180px] bg-green-300 hover:bg-green-500 text-center  text-sm rounded-md font-bold cursor-pointer
     sm:order-3 sm:col-span-1 sm:text-lg sm:mt-[-30px]
     md:order-4 md:mt-[5px]
 }
@@ -200,4 +200,7 @@
 }
 .loading{
     @apply w-[120px] h-[120px] flex justify-center items-center bg-black z-10 fixed
+}
+.headerText{
+    @apply bg-gray-300 py-3 font-semibold text-2xl text-center w-full text-gray-600 mt-[10px]
 }
