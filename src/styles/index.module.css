@@ -66,13 +66,15 @@
     flex-direction: column;
 }
 .hamburgerSlider{
-    padding-left: 20px;
     padding-top:20px;
     z-index: 1001;
     backdrop-filter: blur(10px);
     height: 100vh;
     inset: 0;
     position: fixed;
+    display:flex;
+    flex-direction: column;
+    align-items: start;
     top: 0;
     animation: __slideInLeft .4s forwards;
     left: 0;
@@ -113,15 +115,15 @@
 }
 
 .collectionDiv{
-    @apply justify-center items-center flex flex-col bg-gray-100 py-4 px-2
-    sm:grid sm:grid-rows-3 sm:grid-cols-2 sm:text-2xl sm:grid-rows-[50px_80px_110px] sm:pl-[40px]
+    @apply justify-center items-center flex flex-col bg-gray-100 py-4 px-2 relative
+    sm:grid sm:grid-cols-2 sm:text-2xl sm:grid-rows-[50px_80px_110px] sm:pl-[40px]
     md:pl-[10px] md:grid-rows-[120px_80px_50px]
     lg:px-[5%] lg:grid-rows-[150px_100px_80px] overflow-hidden
 }
 
 .collectionText{
     @apply font-bold text-lg text-gray-700 text-center
-    sm:text-2xl sm:order-1 sm:col-span-2 sm:text-start sm:text-3xl 
+    sm:order-1 sm:col-span-2 sm:text-start sm:text-3xl
     md:col-span-1 md:text-5xl lg:w-[60px]
 }
 .imageDiv{
@@ -133,7 +135,7 @@
 
 .text{
     @apply text-center text-gray-500 px-3 py-2  text-lg font-thin 
-    sm:order-2 sm:col-span-2 sm:text-start sm:text-2xl sm:text-xl sm:px-0
+    sm:order-2 sm:col-span-2 sm:text-start sm:text-xl sm:px-0
     md:text-[18px] md:order-3 md:col-span-1
     lg:text-[17px] lg:w-[350px]
 }
@@ -175,7 +177,7 @@
     @apply h-[450px] w-[100%] overflow-hidden
 }
 .footerDiv2{
-    @apply fixed absolute flex justify-between mt-[10%] cursor-pointer h-[400px]
+    @apply absolute flex justify-between mt-[10%] cursor-pointer h-[400px]
 }
 .footerDiv2 div{
     @apply flex w-[10%]
@@ -184,5 +186,18 @@
     z-index: 1;
 }
 .bestSellers{
-    @apply bg-green-300 py-2 font-semibold text-xl text-center w-full
+    @apply bg-gray-300 py-2 font-semibold text-xl text-center w-full text-gray-600
+}
+.bagInfoImage{
+    @apply flex
+}
+.bagInfoButton :first-child {
+    @apply py-[7px] rounded-md justify-center w-[120px]
+    hover:bg-green-600 bg-green-400 text-gray-200 font-semibold
+}
+.description{
+    @apply pl-[10px] text-xl font-semibold text-gray-600
+}
+.loading{
+    @apply w-[120px] h-[120px] flex justify-center items-center bg-black z-10 fixed
 }

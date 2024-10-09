@@ -5,7 +5,7 @@ export interface SliderProps{
 }
 export interface BagDetails{
     image:StaticImageData | string,
-    storename: string,
+    store: string,
     price: string,
 }
 
@@ -25,4 +25,8 @@ export interface ApiResponse {
 export interface TouchComponentProps{
     props:number,
     collection: BagDetails[]
+}
+export interface RouterData{
+    url: string,
+    bagDetails: BagDetails
 }

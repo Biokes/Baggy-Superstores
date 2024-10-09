@@ -1,5 +1,5 @@
-import RegisterComponent from '../components/register';
-import styles from '../index.module.css'
+import RegisterComponent from '../components/auth/register';
+import styles from '../styles/index.module.css'
 import React from "react";
 export default function Page(){
     return(

@@ -1,26 +1,22 @@
 'use client';
-import styles from '@/index.module.css'
+import styles from '@/styles/index.module.css'
 import {Icon} from '@iconify/react'
 import { useState } from 'react'
 import Hamburger from 'hamburger-react';
 import {useRouter } from 'next/navigation'
-import Slider from '../slider'
+import Slider from '../slider/slider'
 import {SliderProps} from '@/interfaces/interfaces'
-import HeroSection from './heroSection'
-import BagCollection from '@/components/homePage/bagCollection'
-import Footer from './footer'
 
-export const Navbar =({props}:SliderProps)=>{
+export default function Navbar({props}:SliderProps){
     const list = [
-        ['Home', '/'], ['New','/new'], ['Shopping bag', '/shopping'],
+        ['Home', '/home'], ['New','/new'], ['Shopping bag', '/shopping'],
         ['Backpack bags', '/backpack'],['Cosmetic Bags', '/cosmetics'],
         ['About us', '/about'],['Contact','/contact']
     ]
-
     const router = useRouter();
     const [isOpen, setOpen] = useState<boolean>(false)
     return (
-        <div className={'flex justify-between bg-gray-300 px-[20px] relative py-[10px]'}>
+        <div className={'flex justify-between bg-gray-300 px-[20px] relative py-[10px] w-full'}>
             {isOpen && (
                 <Slider props={props}/>
             )}
@@ -35,7 +31,7 @@ export const Navbar =({props}:SliderProps)=>{
                             className={`list-none ${index == props ? 'text-green-600' :'text-gray-700' }
                             hover:text-green-600 cursor-pointer font-thin text-md py-[5px]`}
                             onClick={()=>{
-                                if(index ===props) {
+                                if(index !== props) {
                                     router.push(url)
                                 }
                             }}>{text}</li>
@@ -54,16 +50,5 @@ export const Navbar =({props}:SliderProps)=>{
             </section>
         </div>
 
-    )
-}
-
-export default function  HomeComponent({props}:SliderProps){
-    return (
-        <div className={`${styles.slideIn}`}>
-            <Navbar props={props}/>
-            <HeroSection/>
-            <BagCollection/>
-            <Footer/>
-        </div>
     )
 }

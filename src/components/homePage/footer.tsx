@@ -1,10 +1,11 @@
+'use client'
 import prototype1 from '../../assets/bags003JPG.jpeg'
 import prototype2 from '../../assets/BAGS6548JPG.jpeg'
-import styles from '@/index.module.css'
+import styles from '@/styles/index.module.css'
 import {useState} from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import Image from 'next/image'
-export default function Footer(){
+export default function HomeFooter(){
     const [isClicked, setClicked] = useState<boolean>(false);
     <Icon icon="iconamoon:arrow-left-2-duotone" width="1.2rem" height="1.2rem" className="color: black"></Icon>
     const handleClick = ()=>{

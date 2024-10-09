@@ -5,7 +5,7 @@ import {toast, ToastContainer} from 'react-toastify';
 import {Formik,Field,Form} from "formik";
 import {useRouter} from "next/navigation";
 import {useState} from "react";
-import styles from '../index.module.css'
+import styles from '../../styles/index.module.css'
 import {Icon} from "@iconify/react";
 import 'react-toastify/dist/ReactToastify.css'
 import { useDispatch } from 'react-redux';

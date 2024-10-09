@@ -1,15 +1,15 @@
 'use client'
 import Bag1 from '../../assets/bags002.jpg'
 import Bag2 from '../../assets/bags001.jpg'
-import '../../index.module.css'
+import '../../styles/index.module.css'
 import {useState, useEffect} from 'react'
 import Image from 'next/image'
-import styles from '../../index.module.css'
+import styles from '../../styles/index.module.css'
+import Link from 'next/link'
 
 export default function HeroSection(){
     const [showFirst, setShowFirst] = useState<boolean>(false);
-    const [isTransitioning, setIsTransitioning] = useState<boolean>(false); 
-
+    const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   useEffect(() => {
     const timer = setInterval(() => {
       setIsTransitioning(true);
@@ -20,6 +20,8 @@ export default function HeroSection(){
     }, 4000);
     return () => clearInterval(timer);
 }, []);
+
+
     return (
         <div className={styles.collectionDiv}>
             <p className={styles.collectionText}>New Collections</p>
@@ -40,7 +42,9 @@ export default function HeroSection(){
                 The highest quality products, sewn in Ireland from Irish materials.
                 Quality and durability for years.
             </p>
-            <button className={styles.collectionButton}>New Collection</button>
+            <Link className={styles.collectionButton} href={'/backpack'}>
+                New Collection
+            </Link>
         </div>
     )
 }
