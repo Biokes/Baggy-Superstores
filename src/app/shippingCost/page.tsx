@@ -1,6 +1,7 @@
 'use client'
 import styles from '@/styles/index.module.css'
 import Navbar from "@/components/homePage/navbar"
+import Footer from '@/components/homePage/footer'
 export default function Shipping(){
     return (
         <div>
@@ -50,6 +51,7 @@ export default function Shipping(){
                     </p>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }       
