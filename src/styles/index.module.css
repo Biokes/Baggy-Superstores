@@ -189,11 +189,20 @@
     @apply bg-gray-300 py-2 font-semibold text-xl text-center w-full text-gray-600
 }
 .bagInfoImage{
-    @apply flex
+    @apply w-full h-auto flex sm:justify-center sm:items-center sm:px-[20%]
+}
+.bagInfoImage :first-child{
+    @apply sm:w-[100%] rounded-md  
 }
 .bagInfoButton :first-child {
-    @apply py-[7px] rounded-md justify-center w-[120px]
+    @apply py-[7px] rounded-md justify-center h-[320px] w-auto overflow-hidden
     hover:bg-green-600 bg-green-400 text-gray-200 font-semibold
+}
+.priceAndStorename{
+    @apply gap-2
+}
+.storename{
+    @apply text-2xl
 }
 .description{
     @apply pl-[10px] text-xl font-semibold text-gray-600
@@ -203,4 +212,13 @@
 }
 .headerText{
     @apply bg-gray-300 py-3 font-semibold text-2xl text-center w-full text-gray-600 mt-[10px]
+}
+.cartButton{
+    @apply text-center py-3 rounded-md text-lg font-bold text-gray-700 px-[7px] bg-green-500 hover:bg-green-800
+}
+.ptags{
+    @apply gap-3
+}
+.ptags p{
+    @apply sm:text-lg md:text-2xl px-[10px] sm:px-[15px] md:px-[20px] py-[3%]
 }

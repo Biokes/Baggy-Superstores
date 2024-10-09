@@ -11,12 +11,11 @@ import { useState } from 'react';
 import Navbar from '@/components/homePage/navbar';
 import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice'; 
-
+import Footer from '@/components/homePage/footer'
 
 export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
     const dispatch = useDispatch();
-
     const Component = () => {
         const productdescription = `Description of the product 
                         Lorem ipsum dolor sit amet, erant saepe affert ex pro,
@@ -35,7 +34,7 @@ export default function BagPack() {
             { image: bag1, store: 'Catherine Bags', price: '$30' },
             { image: bag2, store: 'Mary Bags', price: '$30' }
         ];
-
+ 
         const selectedBag = useSelector((state: RootState) => state.bag);
 
         const handleClick = (bag: BagDetails) => {
@@ -46,21 +45,24 @@ export default function BagPack() {
             <div>
                 <Navbar props={9} />
                 <div>
-                    <div className={styles.BagInfoImage}>
+                    <div className={styles.bagInfoImage}>
                         <Image src={selectedBag.image} alt='loading' /> 
                     </div>
-                    <div className={'flex md:flex-col justify-between items-center md:block b md:gap-5'}>
-                        <p className={'justify-center items-start'}>Store name: {selectedBag.store}</p>
-                        <p>Price: {selectedBag.price}</p>
+
+                    <div className={styles.priceAndStorename}>
+                        <p className={styles.storename}>{selectedBag.store}</p>
+                        <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
-                    <p className={`px-[8px]`}>{productdescription}</p>
-                    <div className={styles.collectionButton} onClick={() => { setShowCart(!isShowingCart)}}>
-                        {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
+                    <p className={styles.bestSellers}>Description</p>
+                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{productdescription}</p>
+                    <div className={'flex justify-center items-center my-[20px]'}>
+                        <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart)}}>
+                            {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
+                        </button>
                     </div>
+                    
                 </div>
 
-                <p className={styles.description}>Description</p>
-                <p className={`px-[8px]`}>{description}</p>
                 <p className={styles.bestSellers}>Best Sellers</p>
                 <div className={`${styles.backPack}`}>
                     {
@@ -76,6 +78,7 @@ export default function BagPack() {
                         ))
                     }
                 </div>
+                <Footer/>
             </div>
         );
     }
