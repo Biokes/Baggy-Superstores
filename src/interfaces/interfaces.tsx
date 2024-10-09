@@ -30,3 +30,8 @@ export interface CartItem{
     quantity:number,
     bag:BagDetails
 }
+export interface ContactRequest{
+    name:string,
+    email:string,
+    question: string
+}

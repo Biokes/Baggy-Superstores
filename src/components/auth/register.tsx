@@ -27,7 +27,7 @@ export default function RegisterComponent (){
                 .email('Invalid Email')
                 .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'valid mail Required')
                 .required('required'),
-            password: Yup.string()
+            password: Yup.string()  
                 .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[,/;!#@%^*&(){}~`])/,
                     'letters, numbers, special characters')
                 .min(8, 'at least 8 characters long')
