@@ -122,14 +122,14 @@ export default function RegisterComponent (){
                                 <section className={`${styles.sectionsContainer}`}>
                                     <Field errors={errors.email} name="email" type={'text'} values={values.email}
                                            placeholder={'email'}
-                                           style={{borderColor: errors.email && touched.email ? 'red' : 'inherit'}}
+                                           style={{borderColor: errors.email || touched.email ? 'red' : 'inherit'}}
                                     />
                                     {errors.email && (<p className={"text-xs font-thin text-[#FF4040FF]"}>{errors.email}</p>)}
                                 </section>
                                 <section className={`${styles.sectionsContainer}`}>
                                     <Field errors={errors.password} name="password" type={'password'}
                                            values={values.password} placeholder={'password'}
-                                           style={{borderColor: errors.password && touched.password ? 'red' : 'inherit'}}
+                                           style={{borderColor: errors.password || touched.password ? 'red' : 'inherit'}}
                                     />
                                     {errors.password && (
                                         <p className={"text-xs font-thin text-red-500"}>{errors.password}</p>)}
@@ -138,7 +138,7 @@ export default function RegisterComponent (){
                                     <Field errors={errors.confirmPassword} values={values.confirmPassword}
                                            name="confirmPassword" type={'password'}
                                            placeholder={'Confirm password'}
-                                           style={{borderColor: errors.confirmPassword && touched.confirmPassword ? 'red' : 'inherit'}}
+                                           style={{borderColor: errors.confirmPassword || touched.confirmPassword ? 'red' : 'inherit'}}
                                     />
                                     {errors.confirmPassword && (
                                         <p className={"text-xs font-thin text-red-500"}>{errors.confirmPassword}</p>)}
