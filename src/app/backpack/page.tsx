@@ -48,13 +48,14 @@ export default function BagPack() {
                     <div className={styles.bagInfoImage}>
                         <Image src={selectedBag.image} alt='loading' /> 
                     </div>
-
+                    <p className={styles.bestSellers}>Description</p>
+                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{productdescription}</p>
                     <div className={styles.priceAndStorename}>
                         <p className={styles.storename}>{selectedBag.store}</p>
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
                     <p className={styles.bestSellers}>Description</p>
-                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{productdescription}</p>
+                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{description}</p>
                     <div className={'flex justify-center items-center my-[20px]'}>
                         <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart)}}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
