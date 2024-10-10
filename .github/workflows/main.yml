@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/{{ APP_NAME }}:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/baggy-superstores:latest
 
   deploy:
     name: deploy to vercel
