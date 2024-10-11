@@ -57,7 +57,7 @@ export default function Shopping(){
                         </Link>
                     ))
                 }
-                </div>
+            </div>
                 <Footer/>
         </div>
     )
