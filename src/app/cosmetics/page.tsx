@@ -22,10 +22,10 @@ export default function Cosmetics(){
         dispatch(setBag(bag))
     }
     return (
-        <div className={'flex flex-col justify-between'}>
+        <div className={'flex flex-col justify-between md:h-[100vh]'}>
             <div>
                 <Navbar props={4}/>
-                <p className={`mt-[20px] ${styles.bestSellers}`}>Cosmatics Bags</p>
+                <p className={`mt-[20px] ${styles.bestSellers}`}>Cosmetics Bags</p>
                 <div className={`${styles.backPack}`}>
                         {
                             bagsPack.map((bag, index) => (
