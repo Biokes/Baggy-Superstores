@@ -23,10 +23,10 @@ export default function Cosmetics(){
     }
     return (
         <div className={'flex flex-col justify-between md:h-[100vh]'}>
-            <div>
+            <div className={styles.slideIn}>
                 <Navbar props={4}/>
-                <p className={`mt-[20px] ${styles.bestSellers}`}>Cosmetics Bags</p>
-                <div className={`${styles.backPack}`}>
+                    <p className={`mt-[20px] ${styles.bestSellers}`}>Cosmetics Bags</p>
+                    <div className={`${styles.backPack}`}>
                         {
                             bagsPack.map((bag, index) => (
                                 <Link key={index} className={`sm:order-${index + 1}`}

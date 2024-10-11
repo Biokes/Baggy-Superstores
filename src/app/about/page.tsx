@@ -22,7 +22,7 @@ export default function About(){
         }
     ]
     return (
-        <div>
+        <div className={styles.slideIn}>
             <Navbar props={5}/>
             <div className={'mt-[20px]'}>
                 <p className={styles.bestSellers}>About us</p>

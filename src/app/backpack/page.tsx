@@ -39,7 +39,7 @@ export default function BagPack() {
         };
 
         return (
-            <div>
+            <div className={styles.slideIn}>
                 <Navbar props={9} />
                 <div>
                     <div className={styles.bagInfoImage}>

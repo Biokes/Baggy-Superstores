@@ -68,7 +68,7 @@ export default function Page(){
         }
     }
     return (
-        <div>
+        <div className={styles.slideIn}>
             <Formik initialValues={{email:'',password:''}} validationSchema={validator}
                     onSubmit={handleSubmit}>
                 {({errors, touched,

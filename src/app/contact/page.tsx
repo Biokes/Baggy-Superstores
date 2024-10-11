@@ -8,6 +8,7 @@ import { useState } from 'react';
 import {toast,ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { TextField, Button, CircularProgress } from '@mui/material';
+import styles from '@/styles/index.module.css'
 
 export default function Contact() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -69,8 +70,8 @@ export default function Contact() {
 
   return (
     <div className={'flex flex-col justify-between h-full'}>
-        <div>
-            <Navbar props={6} />
+      <div className={styles.slideIn}>
+        <Navbar props={6} />
             <div className="flex flex-col justify-around items-center">``
                 <Formik initialValues={initialValues} validationSchema={validator} onSubmit={submit}>
                 {({ values, isValid, errors, touched, handleSubmit, handleChange, handleBlur }) => (
