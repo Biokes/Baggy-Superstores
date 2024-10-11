@@ -66,5 +66,5 @@ jobs:
               },
               "target": "production"
             }' \
-            https://api.vercel.com/v1/deploymentscheckout 
+            https://api.vercel.com/v1/deployments
 

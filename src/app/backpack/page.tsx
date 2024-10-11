@@ -12,6 +12,7 @@ import Navbar from '@/components/homePage/navbar';
 import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice'; 
 import Footer from '@/components/homePage/footer'
+import Link from "next/link";
 
 export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
@@ -23,10 +24,6 @@ export default function BagPack() {
                         per te quidam integre dolorum. Et unum honestatis vel. 
                         Ornatus minimum mentitum ex nam, vim cu apeirian instructior.`;
 
-        const description = `Lorem ipsum dolor sit amet, erant saepe affert ex pro, 
-                        eos id disputando liberavisse. Cum cu reque putent feugait, 
-                        per te quidam integre dolorum. Et unum honestatis vel. 
-                        Ornatus minimum mentitum ex nam, vim cu apeirian instructior.`;
 
         const bagsPack: BagDetails[] = [
             { image: small1, store: 'Emily Bags', price: '$30' },
@@ -54,8 +51,6 @@ export default function BagPack() {
                         <p className={styles.storename}>{selectedBag.store}</p>
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
-                    <p className={styles.bestSellers}>Description</p>
-                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{description}</p>
                     <div className={'flex justify-center items-center my-[20px]'}>
                         <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart)}}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
@@ -68,14 +63,14 @@ export default function BagPack() {
                 <div className={`${styles.backPack}`}>
                     {
                         bagsPack.map((bag, index) => (
-                            <div key={index} className={`sm:order-${index + 1}`}
-                                onClick={() => handleClick(bag)} >
+                            <Link key={index} className={`sm:order-${index + 1}`}
+                                onClick={() => handleClick(bag)} href={'/backpack'}>
                                 <div className={`__zoom-enter ${styles.bagImages}`}>
                                     <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt='' />
                                 </div>
                                 <p className={styles.storename}>{bag.store}</p>
                                 <p className={styles.storeText}>{bag.price}</p>
-                            </div>
+                            </Link>
                         ))
                     }
                 </div>
