@@ -35,3 +35,8 @@ export interface ContactRequest{
     email:string,
     question: string
 }
+export interface Review{
+    text:string,
+    name:string,
+    stars:number
+}
