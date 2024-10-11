@@ -1,6 +1,6 @@
 'use client'
-import { RootState } from "@/redux/store"
-import { useSelector,useDispatch } from "react-redux"
+
+import { useDispatch } from "react-redux"
 import Navbar from '@/components/homePage/navbar';
 import styles from '@/styles/index.module.css'
 import small1 from '../../assets/BAGS015-lu101mjc.webp';
@@ -22,7 +22,6 @@ import Footer from '@/components/homePage/footer';
 import Link from 'next/link'
 
 export default function Shopping(){
-    const selector = useSelector((state:RootState)=>state.bag)
     const dispatch = useDispatch()
     const handleClick = (bag: BagDetails) => {
         dispatch(setBag(bag));

@@ -11,6 +11,7 @@ import bag7 from '../../assets/BAGS021-lu101m39.webp';
 import bag8 from '../../assets/BAGS012-lu101map.webp';
 import bag9 from '../../assets/BAGS012-lu101osh (1).webp';
 import bag10 from '../../assets/BAGS015-lu101mjc (1).webp';
+import Bag11 from '@/assets/BAGS6548JPG.jpeg'
 import {BagDetails} from '@/interfaces/interfaces';
 import styles from '../../styles/index.module.css';
 import { setBag } from '@/redux/bagSlice';
@@ -33,13 +34,11 @@ export default function BagCollection(){
         {image:bag9, store:'Baggy bags', price:'$60'},
         {image:bag10, store:'Baggy bags', price:'$25'}
     ]
-
     const dispatch  = useDispatch();
     const handleClick=(bag:BagDetails)=>{
         dispatch(setBag(bag))
-
     }
-
+    handleClick({image:Bag11,store:'Avie store',price:'$14'});
     return (
         <div className={`${styles.backPack}`}>
             {
