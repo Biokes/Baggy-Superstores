@@ -26,7 +26,6 @@ export default function Cart() {
           <Typography id="modal-description" sx={{ mt: 2 }}>
             This is a basic example of a modal using Material-UI.
           </Typography>
-          <Button onClick={handleClose} sx={{ mt: 3 }}>Close</Button>
         </Box>
       </Modal>
     </div>
