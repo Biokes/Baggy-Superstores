@@ -15,6 +15,7 @@ export default function Navbar({props}:SliderProps){
     ]
     const router = useRouter();
     const [isOpen, setOpen] = useState<boolean>(false)
+    const [open, setIsOpen] = useState<boolean >(false)
     return (
         <div className={'flex justify-between bg-gray-300 px-[20px] relative py-[10px] w-full'}>
             {isOpen && (
@@ -45,7 +46,9 @@ export default function Navbar({props}:SliderProps){
                     }}>
                         <Hamburger toggle={setOpen} toggled={isOpen}/>
                     </div>
-                    <Icon icon="carbon:shopping-cart" width={30} height={30}/>
+                    <Icon icon="carbon:shopping-cart" width={30} height={30} onClick={()=>{
+                        setIsOpen(true)
+                    }}/>
                 </div>
             </section>
         </div>

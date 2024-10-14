@@ -13,6 +13,7 @@ import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice'; 
 import Footer from '@/components/homePage/footer'
 import Link from "next/link";
+import { addItem } from "@/redux/cartSlice";
 
 export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
@@ -37,6 +38,11 @@ export default function BagPack() {
         const handleClick = (bag: BagDetails) => {
             dispatch(setBag(bag));
         };
+        const addToCart=()=>{
+            if(isShowingCart){
+                dispatch(addItem({quantity:1,bag:selectedBag}))
+            }
+        }
 
         return (
             <div className={styles.slideIn}>
@@ -52,7 +58,9 @@ export default function BagPack() {
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
                     <div className={'flex justify-center items-center my-[20px]'}>
-                        <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart)}}>
+                        <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
+                            addTocart()
+                        }}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
                         </button>
                     </div>

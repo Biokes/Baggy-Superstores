@@ -22,7 +22,7 @@ const cartSlice = createSlice ({
             }
         },
         popItem(state, action: PayloadAction<CartItem>) {
-            return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
+            return state.filter(cartItem => cartItem.bag.image === action.payload.bag.image);
         }
     }
 })
