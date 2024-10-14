@@ -2,8 +2,7 @@
 import Footer from '@/components/homePage/footer';
 import Navbar from '@/components/homePage/navbar';
 import {Form, Formik} from 'formik';
-import MailIcon from '@mui/icons-material/mail'
-import CallIcon from '@mui/icons-material/call'
+import Icon from '@iconify/react'
 import * as Yup from 'yup';
 import {ApiResponse, ContactRequest} from '@/interfaces/interfaces';
 import { useState } from 'react';
@@ -117,12 +116,12 @@ export default function Contact() {
           </div>
           <div className={styles.contactPack}>
             <div className={styles.contact}>
-              <CallIcon/>
+              <Icon icon="line-md:phone-call-loop"  width={40} height={40}/>
               <p className={'text-lg'}>123 945 203 90</p>
               <p className={'text-lg'}>call us</p>
             </div>
             <div className={styles.contact}>
-              <MailIcon/>
+              <Icon icon="logos:google-gmail" width={40} height={40}/>
               <p className={'text-lg'}>mailer@email.com</p>
               <p className={'text-lg'}>Mail us</p>
             </div>
