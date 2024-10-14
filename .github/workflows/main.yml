@@ -53,9 +53,8 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/baggy-superstores:latest
-          # Ensure your Dockerfile is in the root directory or specify its path.
-          context: .
-          file: Dockerfile  # Specify the Dockerfile if not in the root
+          # context: .
+          # file: Dockerfile
 
   deploy:
     name: Deploy to Vercel
