@@ -40,6 +40,7 @@
 }
 .slideIn{
     animation: __slideInLeft .5s;
+    position: relative;
 }
 .sectionsContainer{
     padding-inline :30px;
@@ -227,4 +228,16 @@
 }
 .review{
     box-shadow: 1px -1px 15px;
+}
+.contact{
+    @apply flex flex-col justify-center items-center py-[20px] w-[250px] bg-gray-300 lg:w-[300px] lg:h-[150px] cursor-pointer
+}
+.contactPack{
+    @apply flex flex-col justify-center items-center gap-5 my-[40px] lg:gap-[60px] rounded-md
+}
+.pack{
+    @apply flex flex-col lg:flex-row lg:justify-around lg:items-center pb-[30px]
+}
+.form{
+    @apply flex flex-col gap-7 lg:gap-2 flex flex-col justify-center items-center
 }
