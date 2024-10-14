@@ -1,5 +1,5 @@
 'use client'
-import { BagDetails } from "@/interfaces/interfaces";
+import { BagDetails, CartItem } from "@/interfaces/interfaces";
 import Image from 'next/image';
 import styles from '../../styles/index.module.css';
 import small1 from '../../assets/BAGS015-lu101mjc.webp';
@@ -58,8 +58,8 @@ export default function BagPack() {
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
                     <div className={'flex justify-center items-center my-[20px]'}>
-                        <button  className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
-                            addTocart()
+                        <button className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
+                            addToCart();
                         }}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
                         </button>
