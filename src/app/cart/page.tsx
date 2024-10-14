@@ -1,15 +1,4 @@
-// import { RootState } from "@/redux/store"
-// import { useSelector } from "react-redux"
-
-// export default function Cart(){
-//     const selector = useSelector((state:RootState)=>state.cart)
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal, Box, Button, Typography } from '@mui/material';
 
 export default function Cart() {
@@ -48,7 +37,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 300,
+  width: 200,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
