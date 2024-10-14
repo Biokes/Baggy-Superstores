@@ -2,7 +2,7 @@
 import Footer from '@/components/homePage/footer';
 import Navbar from '@/components/homePage/navbar';
 import {Form, Formik} from 'formik';
-import Icon from '@iconify/react'
+import {Icon} from '@iconify/react'
 import * as Yup from 'yup';
 import {ApiResponse, ContactRequest} from '@/interfaces/interfaces';
 import { useState } from 'react';
