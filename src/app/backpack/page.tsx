@@ -1,5 +1,5 @@
 'use client'
-import { BagDetails, CartItem } from "@/interfaces/interfaces";
+import { BagDetails} from "@/interfaces/interfaces";
 import Image from 'next/image';
 import styles from '../../styles/index.module.css';
 import small1 from '../../assets/BAGS015-lu101mjc.webp';
@@ -13,7 +13,8 @@ import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice'; 
 import Footer from '@/components/homePage/footer'
 import Link from "next/link";
-import { addItem } from "@/redux/cartSlice";
+import  {addItem}  from "@/redux/cartSlice";
+import {popItem} from '@/redux/cartSlice'
 
 export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
@@ -41,6 +42,8 @@ export default function BagPack() {
         const addToCart=()=>{
             if(isShowingCart){
                 dispatch(addItem({quantity:1,bag:selectedBag}))
+            }else{
+                dispatch(popItem({quantity:1,bag:selectedBag}))
             }
         }
 
@@ -57,7 +60,7 @@ export default function BagPack() {
                         <p className={styles.storename}>{selectedBag.store}</p>
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
-                    <div className={'flex justify-center items-center my-[20px]'}>
+                    <div className={`flex justify-center items-center my-[20px] ${isShowingCart?'':'text-gray-200'}`}>
                         <button className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
                             addToCart();
                         }}>

@@ -22,9 +22,10 @@ const cartSlice = createSlice ({
             }
         },
         popItem(state, action: PayloadAction<CartItem>) {
-            return state.filter(cartItem => cartItem.bag.image === action.payload.bag.image);
-        }
+            return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
+
+        },
     }
 })
-export const {addItem,increaseQuantity,decreaseQuantity} = cartSlice.actions
+export const {addItem,increaseQuantity,decreaseQuantity,popItem} = cartSlice.actions
 export default cartSlice.reducer
