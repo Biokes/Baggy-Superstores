@@ -51,7 +51,7 @@ export default function About(){
                     <div className={'flex flex-col gap-[30px] md:gap-[45px] px-[5px] items-center'}>
                         {
                             reviews.map((review,index)=>(
-                                <div className={`${styles.review}`} >
+                                <div className={`${styles.review}`} key={index}>
                                     <p className={'text-lg italic sm:text-xl md:text-3xl px-[20px] text-center'}>{review.text}</p>
                                     <p className={'font-bold text-lg sm:text-xl md:text-2xl'}>{review.name}</p>
                                     <p >{review.stars}</p>
