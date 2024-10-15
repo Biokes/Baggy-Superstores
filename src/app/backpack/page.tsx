@@ -2,10 +2,10 @@
 import { BagDetails} from "@/interfaces/interfaces";
 import Image from 'next/image';
 import styles from '../../styles/index.module.css';
-import small1 from '../../assets/BAGS015-lu101mjc.webp';
-import small2 from '../../assets/BAGS012-lu101osh.webp';
-import bag1 from '../../assets/BAGS11-lu101ode.webp';
-import bag2 from '../../assets/BAGS022-lu101neq.webp';
+import small1 from '../../../assets/BAGS015-lu101mjc.webp';
+import small2 from '../../../assets/BAGS012-lu101osh.webp';
+import bag1 from '../../../assets/BAGS11-lu101ode.webp';
+import bag2 from '../../../assets/BAGS022-lu101neq.webp';
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from 'react';
 import Navbar from '@/components/homePage/navbar';

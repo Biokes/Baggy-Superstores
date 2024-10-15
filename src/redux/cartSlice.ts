@@ -1,31 +1,40 @@
-import {CartItem} from "@/interfaces/interfaces";
+import {CartItem,CartAndIcon} from "@/interfaces/interfaces";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+const cartList:CartItem[] = []
+const initialState:CartAndIcon = {
+    isRed:false,
+    cart:cartList
+}
 
-const initialState:CartItem[] = []
 const cartSlice = createSlice ({
     name:'cart',
     initialState,
     reducers: {
         addItem(state, action: PayloadAction<CartItem>) {
-            state.push(action.payload);
+            state.cart.push(action.payload);
+            state.isRed= true;
         },
         increaseQuantity(state, action: PayloadAction<CartItem>) {
-            const item = state.find(cartItem => cartItem.bag.image === action.payload.bag.image);
-            if (item) {
-                item.quantity++;
-            }
+            // const item= state.cart.find(initialState.cart => .image === action.payload.bag.image);
+            // const quantity = action.payload.quantity
+            // if (item) {
+            //     item.quantity++;
+            // }
         },
         decreaseQuantity(state, action: PayloadAction<CartItem>){
-            const item = state.find(cartItem => cartItem.bag.image === action.payload.bag.image);
-            if (item && item.quantity > 1) {
-                item.quantity--;
-            }
+            // const item = state.find(cartItem: => cartItem.bag.image === action.payload.bag.image);
+            // if (item && item.quantity > 1) {
+            //     item.quantity--;
+            // }
         },
         popItem(state, action: PayloadAction<CartItem>) {
-            return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
+            // return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
 
         },
+        setRed(state, action:PayloadAction<boolean>){
+            // state
+        }
     }
 })
-export const {addItem,increaseQuantity,decreaseQuantity,popItem} = cartSlice.actions
+export const {addItem,increaseQuantity,decreaseQuantity,popItem,setRed} = cartSlice.actions
 export default cartSlice.reducer

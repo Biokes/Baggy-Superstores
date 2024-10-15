@@ -40,3 +40,8 @@ export interface Review{
     name:string,
     stars:number
 }
+
+export interface CartAndIcon{
+    isRed:boolean,
+    cart: CartItem[]
+}

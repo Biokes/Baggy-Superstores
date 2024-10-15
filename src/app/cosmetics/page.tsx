@@ -1,7 +1,7 @@
 'use client';
 import {BagDetails} from '@/interfaces/interfaces';
-import small1 from '../../assets/BAGS015-lu101mjc.webp';
-import small2 from '../../assets/BAGS012-lu101osh.webp';
+import small1 from '../../../assets/BAGS015-lu101mjc.webp';
+import small2 from '../../../assets/BAGS012-lu101osh.webp';
 import Navbar from  '@/components/homePage/navbar'
 import Footer from '@/components/homePage/footer';
 import Link from 'next/link';

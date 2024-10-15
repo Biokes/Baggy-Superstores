@@ -1,6 +1,6 @@
 'use client'
-import Bag1 from '../../assets/bags002.jpg'
-import Bag2 from '../../assets/bags001.jpg'
+import Bag1 from '../../../assets/bags002.jpg'
+import Bag2 from '../../../assets/bags001.jpg'
 import '../../styles/index.module.css'
 import {useState, useEffect} from 'react'
 import Image from 'next/image'

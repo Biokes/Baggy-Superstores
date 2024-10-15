@@ -1,17 +1,17 @@
 'use client'
-import small1 from '../../assets/BAGS015-lu101mjc.webp';
-import small2 from '../../assets/BAGS012-lu101osh.webp';
-import bag1 from '../../assets/BAGS11-lu101ode.webp';
-import bag2 from '../../assets/BAGS022-lu101neq.webp';
-import bag3 from '../../assets/BAGS020-lu101o3d.webp';
-import bag4 from '../../assets/BAGS025-lu101ol1.webp';
-import bag5 from '../../assets/BAGS014-lu101n4m.webp';
-import bag6 from '../../assets/BAGS008-lu101nvj.webp';
-import bag7 from '../../assets/BAGS021-lu101m39.webp';
-import bag8 from '../../assets/BAGS012-lu101map.webp';
-import bag9 from '../../assets/BAGS012-lu101osh (1).webp';
-import bag10 from '../../assets/BAGS015-lu101mjc (1).webp';
-import Bag11 from '@/assets/BAGS6548JPG.jpeg'
+import small1 from '../../../assets/BAGS015-lu101mjc.webp';
+import small2 from '../../../assets/BAGS012-lu101osh.webp';
+import bag1 from '../../../assets/BAGS11-lu101ode.webp';
+import bag2 from '../../../assets/BAGS022-lu101neq.webp';
+import bag3 from '../../../assets/BAGS020-lu101o3d.webp';
+import bag4 from '../../../assets/BAGS025-lu101ol1.webp';
+import bag5 from '../../../assets/BAGS014-lu101n4m.webp';
+import bag6 from '../../../assets/BAGS008-lu101nvj.webp';
+import bag7 from '../../../assets/BAGS021-lu101m39.webp';
+import bag8 from '../../../assets/BAGS012-lu101map.webp';
+import bag9 from '../../../assets/BAGS012-lu101osh (1).webp';
+import bag10 from '../../../assets/BAGS015-lu101mjc (1).webp';
+import Bag11 from '../../../assets/BAGS6548JPG.jpeg'
 import {BagDetails} from '@/interfaces/interfaces';
 import styles from '../../styles/index.module.css';
 import { setBag } from '@/redux/bagSlice';
