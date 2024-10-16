@@ -58,7 +58,6 @@ describe('Cart Reducers', () => {
     beforeEach(() => {
         store = setupStore();
     })
-
     it('tests item is added to cart and red icon on cart is shown', () => {
         const initialState: CartAndIcon = store.getState().cart;
         expect(initialState.isRed).toBe(false);
@@ -108,7 +107,6 @@ describe('Cart Reducers', () => {
 
         cartIcon = screen.getByTestId('cart-icon');
         fireEvent.click(cartIcon);
-
         updatedState = store.getState().cart;
         expect(updatedState.isRed).toBe(false);
     });
