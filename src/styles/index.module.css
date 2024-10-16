@@ -215,7 +215,8 @@
     @apply bg-gray-300 py-3 font-semibold text-2xl text-center w-full text-gray-600 mt-[10px]
 }
 .cartButton{
-    @apply text-center py-3 rounded-md text-lg font-bold text-gray-700 px-[7px] bg-green-500 hover:bg-green-800
+    @apply text-center py-3 rounded-md text-lg font-bold text-gray-200 px-[7px]
+    bg-green-500 hover:bg-green-800
 }
 .ptags{
     @apply gap-3

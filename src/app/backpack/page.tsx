@@ -13,7 +13,7 @@ import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice'; 
 import Footer from '@/components/homePage/footer'
 import Link from "next/link";
-import  {addItem}  from "@/redux/cartSlice";
+import {addItem, offRed,onRed} from "@/redux/cartSlice";
 import {popItem} from '@/redux/cartSlice'
 
 export default function BagPack() {
@@ -35,7 +35,7 @@ export default function BagPack() {
         ];
  
         const selectedBag = useSelector((state: RootState) => state.bag);
-
+        const isRed = useSelector((state:RootState)=>state.cart.isRed)
         const handleClick = (bag: BagDetails) => {
             dispatch(setBag(bag));
         };
@@ -63,6 +63,11 @@ export default function BagPack() {
                     <div className={`flex justify-center items-center my-[20px] ${isShowingCart?'':'text-gray-200'}`}>
                         <button className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
                             addToCart();
+                            if(isRed){
+                                offRed()
+                            }else{
+                                onRed()
+                            }
                         }}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
                         </button>

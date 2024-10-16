@@ -31,10 +31,17 @@ const cartSlice = createSlice ({
             // return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
 
         },
-        setRed(state, action:PayloadAction<boolean>){
-            // state
+        offRed(state){
+            state.isRed=false;
+        },
+        onRed(state){
+            state.isRed=true;
         }
     }
 })
-export const {addItem,increaseQuantity,decreaseQuantity,popItem,setRed} = cartSlice.actions
+export const {addItem,
+    increaseQuantity,
+    decreaseQuantity,
+    popItem,
+    offRed,onRed} = cartSlice.actions
 export default cartSlice.reducer
