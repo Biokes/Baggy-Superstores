@@ -163,7 +163,7 @@
 }
 .storename{
     @apply text-center text-2xl font-semibold text-gray-700 py-[10px] 
-    md:text-sm
+    md:text-sm md:pt-[5px] md:font-medium lg:text-3xl
 }
 .storeText{
     @apply text-center font-thin text-gray-500
@@ -189,21 +189,33 @@
 .bestSellers{
     @apply bg-gray-300 py-2 font-semibold text-xl text-center w-full text-gray-600
 }
+.gridContainer{
+    @apply md:grid md:grid-rows-[200px_100px_100px] lg:grid-rows-[250px_80px_80px]
+    md:grid-cols-[350px_auto] py-[20px] md:px-[20px] md:gap-3 lg:grid-cols-[500px_auto]
+}
 .bagInfoImage{
-    @apply w-full h-auto flex sm:justify-center sm:items-center sm:px-[20%] md:order-1 md:grid-rows-3
+    @apply w-full h-auto flex sm:justify-around sm:items-center sm:px-[20%]
+    md:order-1 md:row-span-3 md:col-span-1 md:px-[3%]
 }
 .bagInfoImage :first-child{
-    @apply sm:w-[100%] rounded-md md:w-[400px]
+    @apply sm:w-[100%] rounded-lg py-[10%] md:w-[100%] overflow-hidden
 }
 .bagInfoButton :first-child {
-    @apply py-[7px] rounded-md justify-center h-[320px] w-auto overflow-hidden
+    @apply py-[7px] rounded-md justify-center h-[320px] w-auto overflow-hidden  md:h-auto md:w-full
     hover:bg-green-600 bg-green-400 text-gray-200 font-semibold
 }
+.cartButton{
+   @apply md:order-4 flex justify-center items-center my-[20px] md:col-span-1
+}
 .priceAndStorename{
-    @apply gap-2
+    @apply gap-2 md:order-3 md:col-span-1 md:gap-[50px]
+    md:flex md:items-start md:mt-[10%] lg:ml-[1%] lg:mt-[7%] lg:items-start lg:mb-[20px]
+}
+.productDescription{
+    @apply px-[8px] md:px-0 md:my-[20px] sm:text-lg text-gray-600 py-[5px] md:text-lg lg:text-3xl lg:py-[15px] lg:px-[15px]
 }
 .storename{
-    @apply text-2xl
+    @apply text-2xl md:text-xl lg:text-2xl font-semibold text-gray-700
 }
 .description{
     @apply pl-[10px] text-xl font-semibold text-gray-600

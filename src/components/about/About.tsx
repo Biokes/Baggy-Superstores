@@ -8,15 +8,15 @@ export default function About(){
     const reviews: Review[] = [
         {
             text:`Duis congue lectus vel rutrum facilisis. In hac habitasse platea dictumst. 
-                Nam accumsan libero libero, vehicula fringilla elit mattis sed. 
-                Praesent nec feugiat velit, sit amet tempor.`,
+                  Nam accumsan libero libero, vehicula fringilla elit mattis sed. 
+                  Praesent nec feugiat velit, sit amet tempor.`,
             name:'Debbie suzan',
             stars:5
         },
         {
             text:`Duis congue lectus vel rutrum facilisis. In hac habitasse platea dictumst. 
-               Nam accumsan libero libero, vehicula fringilla elit mattis sed. 
-               Praesent nec feugiat velit, sit amet tempor.`,
+                  Nam accumsan libero libero, vehicula fringilla elit mattis sed. 
+                  Praesent nec feugiat velit, sit amet tempor.`,
             name:'Madison Evans',
             stars:5
         }
@@ -30,20 +30,24 @@ export default function About(){
                     <p className={'text-lg pr-[15px] md:pr-[25px]'}>Our Story...</p>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit vulputate,
-                        fermentum pellentesque feugiat aenean fringilla torquent malesuada. Taciti fames vehicula.
-                        aliquam arcu nascetur habitasse dictum conubia eleifend, proin netus magna mollis pulvinar
-                        nostra habitant suscipit quisque, eu molestie fusce et mi in adipiscing ad.
+                        fermentum pellentesque feugiat aenean fringilla torquent malesuada. Taciti
+                        fames vehicula. aliquam arcu nascetur habitasse dictum conubia eleifend,
+                        proin netus magna mollis pulvinar nostra habitant suscipit quisque,
+                        eu molestie fusce et mi in adipiscing ad.
                     </p>
                     <p>
-                        Commodo efficitur ac quisque in taciti arcu volutpat condimentum a tortor, malesuada facilisi etiam congue dictum
-                        finibus nulla nisi lorem, metus inceptos cras ridiculus curabitur.<br/>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit vulputate, fermentum pellentesque
-                        feugiat aenean fringilla torquent malesuada. Taciti fames vehicula aliquam arcu nascetur habitasse
-                        dictum conubia eleifend, proin netus magna mollis pulvinar.<br/><br/>
-                        Erat eget ante vulputate. Consectetur felis finibus nibh eleifend curae rutrum class ultrices velit,
-                        ante volutpat ex cras semper at pretium conubia sodales, interdum torquent varius malesuada facilisi
-                        dictum nec metus. Lacinia suspendisse magnis turpis massa etiam iaculis est, nam magna ultricies leo
-                        himenaeos scelerisque natoque viverra, lorem libero commodo tellus aliquet ornare.
+                        Commodo efficitur ac quisque in taciti arcu volutpat condimentum a tortor,
+                        malesuada facilisi etiam congue dictum finibus nulla nisi lorem,
+                        metus inceptos cras ridiculus curabitur.<br/>Lorem ipsum dolor sit
+                        amet consectetur adipiscing elit hendrerit vulputate, fermentum pellentesque
+                        feugiat aenean fringilla torquent malesuada. Taciti fames vehicula aliquam
+                        arcu nascetur habitasse dictum conubia eleifend, proin netus magna mollis
+                        pulvinar.<br/><br/>Erat eget ante vulputate. Consectetur felis finibus
+                        nibh eleifend curae rutrum class ultrices velit, ante volutpat ex cras
+                        semper at pretium conubia sodales, interdum torquent varius malesuada facilisi
+                        dictum nec metus. Lacinia suspendisse magnis turpis massa etiam iaculis est,
+                        nam magna ultricies leo himenaeos scelerisque natoque viverra,
+                        lorem libero commodo tellus aliquet ornare.
                     </p>
                 </div>
                 <div className={'md:px-[5px] my-[20px]'}>

@@ -13,7 +13,7 @@ import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice';
 import Footer from '@/components/homePage/footer'
 import Link from "next/link";
-import {addItem, offRed,onRed} from "@/redux/cartSlice";
+import {addItem} from "@/redux/cartSlice";
 import {popItem} from '@/redux/cartSlice'
 import {Button} from "@mui/material";
 
@@ -21,13 +21,11 @@ export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
     const dispatch = useDispatch();
     const Component = () => {
-        const productdescription = `Description of the product 
+        const productDescription = `Description of the product 
                         Lorem ipsum dolor sit amet, erant saepe affert ex pro,
                         eos id disputando liberavisse. Cum cu reque putent feugait, 
                         per te quidam integre dolorum. Et unum honestatis vel. 
                         Ornatus minimum mentitum ex nam, vim cu apeirian instructior.`;
-
-
         const bagsPack: BagDetails[] = [
             { image: small1, store: 'Emily Bags', price: '$30' },
             { image: small2, store: 'Fav Bags', price: '$30' },
@@ -36,7 +34,6 @@ export default function BagPack() {
         ];
 
         const selectedBag = useSelector((state: RootState) => state.bag);
-        const isRed = useSelector((state:RootState)=>state.cart.isRed)
         const handleClick = (bag: BagDetails) => {
             dispatch(setBag(bag));
         };
@@ -49,28 +46,25 @@ export default function BagPack() {
         }
 
         return (
-            <div className={styles.slideIn}>
+            <div>
                 <Navbar props={9} />
-                <div className={'md:grid md:grid-rows-[100px_200px_200px_100px]'}>
+                <div className={styles.gridContainer}>
                     <div className={styles.bagInfoImage}>
-                        <Image src={selectedBag.image} alt='loading' />
+                        <Image src={selectedBag.image} alt='loading'/>
                     </div>
-                    <p className={styles.bestSellers}>Product Description</p>
-                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>
-                        {productdescription}</p>u
+                    <div className={'md:order-2 md:col-span-1 md:flex md:flex-col'}>
+                        <p className={`${styles.bestSellers}`}>Product Description</p>
+                        <p className={styles.productDescription}>{productDescription}</p>
+                    </div>
                     <div className={styles.priceAndStorename}>
-                        <p className={styles.storename}>{selectedBag.store}</p>
-                        <p className={styles.storename}>{selectedBag.price}</p>
+                        <p className={styles.storename}>Store : {selectedBag.store}</p>
+                        <p className={styles.storename}>Price : {selectedBag.price}</p>
                     </div>
-                    <div className={`flex justify-center items-center my-[20px] ${isShowingCart?'':'text-gray-200'}`}>
-                        <Button sx={{background:'#038F26', paddingInline:'25px', text:'#ffffff'}} onClick={() => { setShowCart(!isShowingCart);
-                            addToCart();
-                            if(isRed)   {
-                                offRed()
-                            }
-                            else{
-                                onRed()
-                            }
+                    <div className={`${styles.cartButton} ${isShowingCart?'':'text-gray-200'}`}>
+                        <Button sx={{background:'#038F26',paddingInline:'25px',color:'#ffffff'}}
+                                onClick={()=> {
+                                    setShowCart(!isShowingCart);
+                                    addToCart();
                         }}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
                         </Button>

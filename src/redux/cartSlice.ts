@@ -1,9 +1,8 @@
-import {CartItem,CartAndIcon} from "@/interfaces/interfaces";
+import {CartItem,Cart} from "@/interfaces/interfaces";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-const cartList:CartItem[] = []
-const initialState:CartAndIcon = {
-    isRed:false,
-    cart:cartList
+const itemsCart:CartItem[]=[];
+const initialState:Cart = {
+    cart: itemsCart
 }
 
 const cartSlice = createSlice ({
@@ -12,36 +11,24 @@ const cartSlice = createSlice ({
     reducers: {
         addItem(state, action: PayloadAction<CartItem>) {
             state.cart.push(action.payload);
-            state.isRed= true;
-        },
-        increaseQuantity(state, action: PayloadAction<CartItem>) {
-            // const item= state.cart.find(initialState.cart => .image === action.payload.bag.image);
-            // const quantity = action.payload.quantity
-            // if (item) {
-            //     item.quantity++;
-            // }
         },
         decreaseQuantity(state, action: PayloadAction<CartItem>){
-            // const item = state.find(cartItem: => cartItem.bag.image === action.payload.bag.image);
-            // if (item && item.quantity > 1) {
-            //     item.quantity--;
-            // }
+            state.cart.filter(item => item.quantity >-1 && action.payload)
         },
         popItem(state, action: PayloadAction<CartItem>) {
-            // return state.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
+            state.cart.filter(cartItem => cartItem.bag.image !== action.payload.bag.image);
 
         },
-        offRed(state){
-            state.isRed=false;
+        increaseQuantity(state, action: PayloadAction<CartItem>) {
+            const item= state.cart.find(item => item.bag.image === action.payload.bag.image);
+            if (item) {
+                item.quantity++
+            }
         },
-        onRed(state){
-            state.isRed=true;
-        }
     }
 })
 export const {addItem,
     increaseQuantity,
     decreaseQuantity,
-    popItem,
-    offRed,onRed} = cartSlice.actions
+    popItem} = cartSlice.actions
 export default cartSlice.reducer

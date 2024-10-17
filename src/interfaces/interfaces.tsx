@@ -41,7 +41,6 @@ export interface Review{
     stars:number
 }
 
-export interface CartAndIcon{
-    isRed:boolean,
+export interface Cart{
     cart: CartItem[]
 }
