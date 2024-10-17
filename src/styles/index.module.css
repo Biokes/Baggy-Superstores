@@ -190,10 +190,10 @@
     @apply bg-gray-300 py-2 font-semibold text-xl text-center w-full text-gray-600
 }
 .bagInfoImage{
-    @apply w-full h-auto flex sm:justify-center sm:items-center sm:px-[20%]
+    @apply w-full h-auto flex sm:justify-center sm:items-center sm:px-[20%] md:order-1 md:grid-rows-3
 }
 .bagInfoImage :first-child{
-    @apply sm:w-[100%] rounded-md  
+    @apply sm:w-[100%] rounded-md md:w-[400px]
 }
 .bagInfoButton :first-child {
     @apply py-[7px] rounded-md justify-center h-[320px] w-auto overflow-hidden
@@ -214,10 +214,9 @@
 .headerText{
     @apply bg-gray-300 py-3 font-semibold text-2xl text-center w-full text-gray-600 mt-[10px]
 }
-.cartButton{
-    @apply text-center py-3 rounded-md text-lg font-bold text-gray-200 px-[7px]
-    bg-green-500 hover:bg-green-800
-}
+/*.cartButton{*/
+/*    @apply text-center py-3 rounded-md text-lg font-bold text-gray-200     bg-green-500 hover:bg-green-800*/
+/*}*/
 .ptags{
     @apply gap-3
 }

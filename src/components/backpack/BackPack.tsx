@@ -15,8 +15,9 @@ import Footer from '@/components/homePage/footer'
 import Link from "next/link";
 import {addItem, offRed,onRed} from "@/redux/cartSlice";
 import {popItem} from '@/redux/cartSlice'
+import {Button} from "@mui/material";
 
-export default function BackPack() {
+export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
     const dispatch = useDispatch();
     const Component = () => {
@@ -50,27 +51,29 @@ export default function BackPack() {
         return (
             <div className={styles.slideIn}>
                 <Navbar props={9} />
-                <div>
+                <div className={'md:grid md:grid-rows-[100px_200px_200px_100px]'}>
                     <div className={styles.bagInfoImage}>
                         <Image src={selectedBag.image} alt='loading' />
                     </div>
-                    <p className={styles.bestSellers}>Description</p>
-                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>{productdescription}</p>
+                    <p className={styles.bestSellers}>Product Description</p>
+                    <p className={`px-[8px] md:px-[18px] sm:text-xl text-gray-600 py-[5px] md:text-2xl bg-gray-200`}>
+                        {productdescription}</p>u
                     <div className={styles.priceAndStorename}>
                         <p className={styles.storename}>{selectedBag.store}</p>
                         <p className={styles.storename}>{selectedBag.price}</p>
                     </div>
                     <div className={`flex justify-center items-center my-[20px] ${isShowingCart?'':'text-gray-200'}`}>
-                        <button className={styles.cartButton} onClick={() => { setShowCart(!isShowingCart);
+                        <Button sx={{background:'#038F26', paddingInline:'25px', text:'#ffffff'}} onClick={() => { setShowCart(!isShowingCart);
                             addToCart();
-                            if(isRed){
+                            if(isRed)   {
                                 offRed()
-                            }else{
+                            }
+                            else{
                                 onRed()
                             }
                         }}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
-                        </button>
+                        </Button>
                     </div>
 
                 </div>
