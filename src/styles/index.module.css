@@ -163,7 +163,7 @@
 }
 .storename{
     @apply text-center text-2xl font-semibold text-gray-700 py-[10px] 
-    md:text-sm md:pt-[5px] md:font-medium lg:text-3xl
+    md:text-sm md:pt-[5px] md:font-light lg:text-[28px]
 }
 .storeText{
     @apply text-center font-thin text-gray-500
@@ -212,7 +212,9 @@
     md:flex md:items-start md:mt-[10%] lg:ml-[1%] lg:mt-[7%] lg:items-start lg:mb-[20px]
 }
 .productDescription{
-    @apply px-[8px] md:px-0 md:my-[20px] sm:text-lg text-gray-600 py-[5px] md:text-lg lg:text-3xl lg:py-[15px] lg:px-[15px]
+    @apply px-[8px] md:px-0 md:my-[20px] flex justify-center items-center
+            sm:text-[10px] text-gray-600 py-[5px] md:text-[17px]
+            lg:text-[28px] lg:py-[15px] lg:px-[15px]
 }
 .storename{
     @apply text-2xl md:text-xl lg:text-2xl font-semibold text-gray-700

@@ -9,13 +9,14 @@ import Image from 'next/image';
 import styles from '@/styles/index.module.css'
 import {useDispatch} from 'react-redux';
 import {setBag} from '@/redux/bagSlice';
+import GeneratePrice from "@/functions/function";
 
 export default function Cosmetics(){
     const bagsPack:BagDetails[] = [
-        { image: small1, store: 'Emily Bags', price: '$30' },
-        { image: small2, store: 'Fav Bags', price: '$30' },
-        { image: small1, store: 'Emily Bags', price: '$30' },
-        { image: small2, store: 'Fav Bags', price: '$30' },
+        { image: small1, store: 'Emily Bags', price: GeneratePrice() },
+        { image: small2, store: 'Fav Bags', price: GeneratePrice() },
+        { image: small1, store: 'Emily Bags', price:  GeneratePrice()},
+        { image: small2, store: 'Fav Bags', price:  GeneratePrice() },
     ];
     const dispatch = useDispatch()
     const handleClick=(bag:BagDetails)=>{
@@ -35,7 +36,7 @@ export default function Cosmetics(){
                                     <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt='' />
                                 </div>
                                 <p className={styles.storename}>{bag.store}</p>
-                                <p className={styles.storeText}>{bag.price}</p>
+                                <p className={styles.storeText}>${bag.price}</p>
                             </Link>
                         ))
                     }

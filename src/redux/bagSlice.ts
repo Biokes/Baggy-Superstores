@@ -1,9 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { BagDetails} from "@/interfaces/interfaces"
+import small1 from '../../assets/BAGS6548JPG.jpeg';
+import GeneratePrice from "@/functions/function";
+
 const bagInitialState: BagDetails= {
-    image:'',
-    store: 'not specified yet',
-    price: 'not specified yet',
+    image:small1,
+    store: 'OMLop Bags',
+    price: GeneratePrice(),
 }
 const bagSlice= createSlice({
     name : 'bag',

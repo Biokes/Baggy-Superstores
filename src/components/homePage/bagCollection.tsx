@@ -18,27 +18,28 @@ import { setBag } from '@/redux/bagSlice';
 import Link from 'next/link'
 import Image from 'next/image'
 import { useDispatch } from 'react-redux';
+import GeneratePrice from "@/functions/function";
 
 export default function BagCollection(){
     const bagsPack: BagDetails[] = [
-        {image:small1,store:'Emily Bags',price:'$30'},
-        {image:small2,store:'Fav Bags',price:'$30'},
-        {image:bag1,store:'Catherine Bags',price:'$30'},
-        {image:bag2,store:'Mary Bags',price:'$30'},
-        {image:bag3,store:'Rite Bags',price:'$30'},
-        {image:bag4,store:'Jenny Bags',price:'$30'},
-        {image:bag5,store:'Lily Bags',price:'$30'},
-        {image:bag6,store:'Rose Bags',price:'$30'},
-        {image:bag7, store:'covered bags', price: '$80'},
-        {image:bag8,store:'maven bags', price:'$40'},
-        {image:bag9, store:'Baggy bags', price:'$60'},
-        {image:bag10, store:'Baggy bags', price:'$25'}
+        {image:small1,store:'Emily Bags',price:GeneratePrice()},
+        {image:small2,store:'Fav Bags',price:GeneratePrice()},
+        {image:bag1,store:'Catherine Bags',price:GeneratePrice()},
+        {image:bag2,store:'Mary Bags',price:GeneratePrice()},
+        {image:bag3,store:'Rite Bags',price:GeneratePrice()},
+        {image:bag4,store:'Jenny Bags',price:GeneratePrice()},
+        {image:bag5,store:'Lily Bags',price:GeneratePrice()},
+        {image:bag6,store:'Rose Bags',price:GeneratePrice()},
+        {image:bag7, store:'covered bags', price:GeneratePrice()},
+        {image:bag8,store:'maven bags', price:GeneratePrice()},
+        {image:bag9, store:'Baggy bags', price:GeneratePrice()},
+        {image:bag10, store:'Baggy bags', price:GeneratePrice()}
     ]
     const dispatch  = useDispatch();
     const handleClick=(bag:BagDetails)=>{
         dispatch(setBag(bag))
     }
-    handleClick({image:Bag11,store:'Avie store',price:'$14'});
+    handleClick({image:Bag11,store:'Avie store',price:GeneratePrice()});
     return (
         <div className={`${styles.backPack}`}>
             {
@@ -48,7 +49,7 @@ export default function BagCollection(){
                             <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt=''/>
                         </div>
                         <p className={styles.storename}>{bag.store}</p>
-                        <p className={styles.storeText}>{bag.price}</p>
+                        <p className={styles.storeText}>${bag.price}</p>
                     </Link>
                 ))
             }

@@ -6,7 +6,7 @@ export interface SliderProps{
 export interface BagDetails{
     image:StaticImageData | string,
     store: string,
-    price: string,
+    price: number,
 }
 
 export interface FormValues {

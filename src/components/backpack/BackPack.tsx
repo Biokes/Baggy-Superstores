@@ -6,8 +6,9 @@ import small1 from '../../../assets/BAGS015-lu101mjc.webp';
 import small2 from '../../../assets/BAGS012-lu101osh.webp';
 import bag1 from '../../../assets/BAGS11-lu101ode.webp';
 import bag2 from '../../../assets/BAGS022-lu101neq.webp';
+import bag101 from '../../../assets/BAGS6548JPG.jpeg';
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Navbar from '@/components/homePage/navbar';
 import { RootState } from "@/redux/store";
 import { setBag } from '@/redux/bagSlice';
@@ -16,21 +17,22 @@ import Link from "next/link";
 import {addItem} from "@/redux/cartSlice";
 import {popItem} from '@/redux/cartSlice'
 import {Button} from "@mui/material";
+import GeneratePrice from '@/functions/function';
 
 export default function BagPack() {
     const [isShowingCart, setShowCart] = useState<boolean>(false);
     const dispatch = useDispatch();
     const Component = () => {
-        const productDescription = `Description of the product 
+        const productDescription= `Description of the product 
                         Lorem ipsum dolor sit amet, erant saepe affert ex pro,
                         eos id disputando liberavisse. Cum cu reque putent feugait, 
                         per te quidam integre dolorum. Et unum honestatis vel. 
                         Ornatus minimum mentitum ex nam, vim cu apeirian instructior.`;
         const bagsPack: BagDetails[] = [
-            { image: small1, store: 'Emily Bags', price: '$30' },
-            { image: small2, store: 'Fav Bags', price: '$30' },
-            { image: bag1, store: 'Catherine Bags', price: '$30' },
-            { image: bag2, store: 'Mary Bags', price: '$30' }
+            { image: small1, store: 'Emily Bags', price: GeneratePrice() },
+            { image: small2, store: 'Fav Bags', price: GeneratePrice() },
+            { image: bag1, store: 'Catherine Bags', price: GeneratePrice() },
+            { image: bag2, store: 'Mary Bags', price: GeneratePrice() }
         ];
 
         const selectedBag = useSelector((state: RootState) => state.bag);
@@ -38,16 +40,18 @@ export default function BagPack() {
             dispatch(setBag(bag));
         };
         const addToCart=()=>{
-            if(isShowingCart){
+            if(!isShowingCart){
                 dispatch(addItem({quantity:1,bag:selectedBag}))
             }else{
-                dispatch(popItem({quantity:1,bag:selectedBag}))
+                dispatch(popItem(selectedBag))
             }
         }
-
+        useEffect(()=>{
+            setShowCart(bag101!==selectedBag.image);
+        },[])
         return (
             <div>
-                <Navbar props={9} />
+                <Navbar props={3} />
                 <div className={styles.gridContainer}>
                     <div className={styles.bagInfoImage}>
                         <Image src={selectedBag.image} alt='loading'/>
@@ -58,14 +62,14 @@ export default function BagPack() {
                     </div>
                     <div className={styles.priceAndStorename}>
                         <p className={styles.storename}>Store : {selectedBag.store}</p>
-                        <p className={styles.storename}>Price : {selectedBag.price}</p>
+                        <p className={styles.storename}>Price : ${selectedBag.price}</p>
                     </div>
                     <div className={`${styles.cartButton} ${isShowingCart?'':'text-gray-200'}`}>
                         <Button sx={{background:'#038F26',paddingInline:'25px',color:'#ffffff'}}
                                 onClick={()=> {
                                     setShowCart(!isShowingCart);
                                     addToCart();
-                        }}>
+                        }} disabled={bag101===selectedBag.image}>
                             {!isShowingCart ? 'Add to cart' : 'Remove from cart'}
                         </Button>
                     </div>
@@ -82,7 +86,7 @@ export default function BagPack() {
                                     <Image src={bag.image} className={`${styles.images} __zoom-enter`} alt='' />
                                 </div>
                                 <p className={styles.storename}>{bag.store}</p>
-                                <p className={styles.storeText}>{bag.price}</p>
+                                <p className={styles.storeText}>${bag.price}</p>
                             </Link>
                         ))
                     }

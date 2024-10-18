@@ -6,3 +6,4 @@ export default function Route(data:BagDetails){
     const Dispatch = useDispatch()
     Dispatch(setBag(data));
 }
+

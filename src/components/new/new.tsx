@@ -14,20 +14,23 @@ import Image from "next/image";
 import {setBag} from '@/redux/bagSlice'
 import {useDispatch} from "react-redux";
 import Link from "next/link";
+import HomeFooter from "@/components/homePage/footer";
+import GeneratePrice from "@/functions/function";
+
 export default function New(){
     const dispatch = useDispatch()
     const Route= (bagDetails:BagDetails)=>{
         dispatch(setBag({image:bagDetails.image,store:bagDetails.store,price:bagDetails.price}))
     }
     const bagsPack: BagDetails[] = [
-        {image:bag1,store:'Catherine Bags',price:'$30'},
-        {image:bag2,store:'Mary Bags',price:'$30'},
-        {image:bag3,store:'Rite Bags',price:'$30'},
-        {image:bag4,store:'Jenny Bags',price:'$30'},
-        {image:bag5,store:'Lily Bags',price:'$30'},
-        {image:bag6,store:'Rose Bags',price:'$30'},
-        {image:bag7, store:'covered bags', price: '$80'},
-        {image:bag8,store:'maven bags', price:'$40'},
+        {image:bag1,store:'Catherine Bags',price: GeneratePrice()},
+        {image:bag2,store:'Mary Bags',price: GeneratePrice()},
+        {image:bag3,store:'Rite Bags',price: GeneratePrice()},
+        {image:bag4,store:'Jenny Bags',price: GeneratePrice()},
+        {image:bag5,store:'Lily Bags',price: GeneratePrice()},
+        {image:bag6,store:'Rose Bags',price: GeneratePrice()},
+        {image:bag7, store:'covered bags', price:  GeneratePrice()},
+        {image:bag8,store:'maven bags', price: GeneratePrice()},
     ]
 
     return (
@@ -48,6 +51,7 @@ export default function New(){
                     ))
                 }
             </div>
+            <HomeFooter/>
         </div>
     )
 }
